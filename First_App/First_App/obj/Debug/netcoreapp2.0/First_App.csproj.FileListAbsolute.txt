@@ -1,0 +1,11 @@
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\bin\Debug\netcoreapp2.0\First_App.deps.json
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\bin\Debug\netcoreapp2.0\First_App.runtimeconfig.json
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\bin\Debug\netcoreapp2.0\First_App.runtimeconfig.dev.json
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\bin\Debug\netcoreapp2.0\First_App.dll
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\bin\Debug\netcoreapp2.0\First_App.pdb
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\obj\Debug\netcoreapp2.0\First_App.csprojAssemblyReference.cache
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\obj\Debug\netcoreapp2.0\First_App.csproj.CoreCompileInputs.cache
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\obj\Debug\netcoreapp2.0\First_App.AssemblyInfoInputs.cache
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\obj\Debug\netcoreapp2.0\First_App.AssemblyInfo.cs
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\obj\Debug\netcoreapp2.0\First_App.dll
+D:\Studies\C#\tutorials\ASP.net\First_App\First_App\obj\Debug\netcoreapp2.0\First_App.pdb
