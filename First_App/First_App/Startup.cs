@@ -10,11 +10,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace First_App
 {
+
     public class Startup
     {
+        private readonly IConfigurationRoot configuration;
+
         public Startup(IHostingEnvironment env)
         {
-            var configuration = new ConfigurationBuilder()
+            configuration = new ConfigurationBuilder()
                                     .AddEnvironmentVariables()
                                     .AddJsonFile(env.ContentRootPath + "/config.json")
                                     .AddJsonFile(env.ContentRootPath + "/config.development.json")
@@ -24,9 +27,11 @@ namespace First_App
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<FeatureToggles>(x => new FeatureToggles {
-                EnableDeveloperExceptions = (configuration.GetValue<bool>("FeatureToggle:EnableDeveloperExceptions")
+            services.AddTransient<FeatureToggles>(x => new FeatureToggles
+            {
+                EnableDeveloperExceptions = configuration.GetValue<bool>("FeatureToggle:EnableDeveloperExceptions")
             });
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +55,11 @@ namespace First_App
                     await next();
 
                 });
-           
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("Default",
+                    "{controller=Home}/{action=Index}/{id?}");
+            });
             app.UseFileServer();
         }
     }
