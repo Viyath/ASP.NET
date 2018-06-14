@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace First_App
@@ -21,7 +22,12 @@ namespace First_App
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseExceptionHandler("/error.html");
-            if (env.IsDevelopment())
+
+            var configuration = new ConfigurationBuilder()
+                                    .AddEnvironmentVariables()
+                                    .Build();
+                                    
+            if (configuration["EnableDeveloperExceptions"] =="True")
             {
                 app.UseDeveloperExceptionPage();
             }
