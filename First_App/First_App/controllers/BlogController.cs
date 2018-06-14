@@ -15,5 +15,9 @@ namespace First_App.controllers
         {
             return "This is the Blog";
         }
+        public IActionResult Post(int id)
+        {
+            return new ContentResult { Content = id.ToString() };
+        }
     }
 }
