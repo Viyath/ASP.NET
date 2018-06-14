@@ -26,6 +26,7 @@ namespace First_App
             var configuration = new ConfigurationBuilder()
                                     .AddEnvironmentVariables()
                                     .AddJsonFile(env.ContentRootPath + "/config.json")
+                                    .AddJsonFile(env.ContentRootPath + "/config.development.json")
                                     .Build();
 
             if (configuration.GetValue<bool>("FeatureToggle:EnableDeveloperExceptions"))
