@@ -12,24 +12,34 @@ namespace First_App
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public Startup(IHostingEnvironment env)
         {
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            app.UseExceptionHandler("/error.html");
-
             var configuration = new ConfigurationBuilder()
                                     .AddEnvironmentVariables()
                                     .AddJsonFile(env.ContentRootPath + "/config.json")
                                     .AddJsonFile(env.ContentRootPath + "/config.development.json")
                                     .Build();
+        }
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddTransient<FeatureToggles>(x => new FeatureToggles {
+                EnableDeveloperExceptions = (configuration.GetValue<bool>("FeatureToggle:EnableDeveloperExceptions")
+            });
+        }
 
-            if (configuration.GetValue<bool>("FeatureToggle:EnableDeveloperExceptions"))
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(
+            IApplicationBuilder app, 
+            IHostingEnvironment env,
+           // ILoggerFactory loggerFactory,
+            FeatureToggles features)
+        {
+            app.UseExceptionHandler("/error.html");            
+
+            //if (configuration.GetValue<bool>("FeatureToggle:EnableDeveloperExceptions"))
+            if (features.EnableDeveloperExceptions)
             {
                 app.UseDeveloperExceptionPage();
             }

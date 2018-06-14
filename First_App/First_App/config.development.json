@@ -1,5 +1,5 @@
 ﻿{
   "FeatureToggle": {
-    "EnableDeveloperExceptions": True
+    "EnableDeveloperExceptions": true
   }
 }
