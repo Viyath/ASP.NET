@@ -25,9 +25,18 @@ namespace First_App
                 app.UseDeveloperExceptionPage();
             }
 
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Path.Value.StartsWith("/hello"))
+                {
+                    await context.Response.WriteAsync("Hello World! get started with ASP in 1 , 2 , 3");
+                }
+                await next();
+            });
+
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World! get started with ASP in 1 , 2 , 3");
+                await context.Response.WriteAsync("whoo hooo....");
             });
         }
     }

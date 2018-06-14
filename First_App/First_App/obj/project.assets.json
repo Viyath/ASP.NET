@@ -12668,11 +12668,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studies\\C#\\tutorials\\ASP.net\\First_App\\First_App\\First_App.csproj",
+      "projectUniqueName": "D:\\Studies\\ASP.NET-practising\\First_App\\First_App\\First_App.csproj",
       "projectName": "First_App",
-      "projectPath": "D:\\Studies\\C#\\tutorials\\ASP.net\\First_App\\First_App\\First_App.csproj",
+      "projectPath": "D:\\Studies\\ASP.NET-practising\\First_App\\First_App\\First_App.csproj",
       "packagesPath": "C:\\Users\\Viyath\\.nuget\\packages\\",
-      "outputPath": "D:\\Studies\\C#\\tutorials\\ASP.net\\First_App\\First_App\\obj\\",
+      "outputPath": "D:\\Studies\\ASP.NET-practising\\First_App\\First_App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
