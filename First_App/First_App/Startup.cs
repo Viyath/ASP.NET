@@ -26,8 +26,8 @@ namespace First_App
             var configuration = new ConfigurationBuilder()
                                     .AddEnvironmentVariables()
                                     .Build();
-                                    
-            if (configuration["EnableDeveloperExceptions"] =="True")
+
+            if (configuration.GetValue<bool>("EnableDeveloperExceptions"))
             {
                 app.UseDeveloperExceptionPage();
             }
