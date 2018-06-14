@@ -28,7 +28,7 @@ namespace First_App
                                     .AddJsonFile(env.ContentRootPath + "/config.json")
                                     .Build();
 
-            if (configuration.GetValue<bool>("EnableDeveloperExceptions"))
+            if (configuration.GetValue<bool>("FeatureToggle:EnableDeveloperExceptions"))
             {
                 app.UseDeveloperExceptionPage();
             }
